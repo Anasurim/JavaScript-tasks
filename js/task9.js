@@ -9,3 +9,20 @@ function numberToString(num) {
 }
 
 console.log(typeof numberToString(5));
+
+function checkedPassword(password) {
+  const ADMIN_PASS = "1111";
+  let message;
+
+  if (password === null) {
+    message = "cancelled!";
+  } else if (password === ADMIN_PASS) {
+    message = "welcome";
+  } else {
+    message = "access denied";
+  }
+
+  console.log(message);
+}
+let x = checkedPassword("1111");
+console.log(x);
