@@ -26,3 +26,33 @@ function checkedPassword(password) {
 }
 let x = checkedPassword("1111");
 console.log(x);
+
+// function formatMessage(message, maxLength) {
+//   let result;
+//   // Change code below this line
+//   if (message.length >= maxLength) {
+//     result = message.slice(message, maxLength) + "...";
+//   } else {
+//     result = message;
+//   }
+//   /// Change code above this line
+//   return result;
+// }
+
+// let b = formatMessage("hello, world!", 22);
+// console.log(b);
+
+function checkForSpam(message) {
+  let result;
+  // Change code below this line
+  // result = message.toLowerCase();
+  if (message.includes("spam") || message.includes("sale")) {
+    result = true;
+  } else {
+    result = false;
+  }
+  // Change code above this line
+  return result;
+}
+const y = checkForSpam("[SPAM] dhdhdhd");
+console.log(y);
