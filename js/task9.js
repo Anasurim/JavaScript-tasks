@@ -56,3 +56,7 @@ function checkForSpam(message) {
 }
 const y = checkForSpam("[SPAM] dhdhdhd");
 console.log(y);
+
+for (let character of "hello") {
+  console.log(character);
+}
