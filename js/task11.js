@@ -16,7 +16,7 @@ for (const character of string) {
 }
 
 const nameToFind = "Roman";
-let message;
+let message = "Client was not found in Database";
 
 for (const client of clients) {
   if (client === nameToFind) {
@@ -24,6 +24,15 @@ for (const client of clients) {
 
     break;
   }
-  message = "Client was not found";
 }
 console.log(message);
+
+const numbers = [1, 2, 15, 6, 7, 8, 9, 23, 45, 76, 14];
+const threshold = 15;
+
+for (let i = 0; i < numbers.length; i += 1) {
+  if (numbers[i] < threshold) {
+    continue;
+  }
+  console.log(`Numbers are bigger than ${threshold}: ${numbers[i]}`);
+}
