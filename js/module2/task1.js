@@ -17,3 +17,13 @@ console.log(clients.indexOf("Kuzt"));
 
 console.log(clients.includes("Kiwi"));
 console.log(clients.includes("Kiss"));
+
+const redFruits = ["apple", "strawberry", "cherry", "cranberries"];
+const fruit = "cherry";
+const hasFruit = redFruits.includes(fruit);
+
+if (hasFruit) {
+  console.log(`${fruit} is red fruit`);
+} else {
+  console.log(`${fruit} is not a red fruit`);
+}
