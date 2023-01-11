@@ -13,11 +13,19 @@ for (const character of string) {
   console.log(character);
 }
 
-let a = 5;
-let b = a;
+// let a = 5;
+// let b = a;
+// console.log(a);
+// console.log(b);
+
+// a = 10;
+// console.log(a);
+// console.log(b);
+const a = ["Roman"];
+const b = a;
 console.log(a);
 console.log(b);
 
-a = 10;
+a.push("Nataliia");
 console.log(a);
 console.log(b);
