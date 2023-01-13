@@ -7,3 +7,14 @@ function getExtremeElements(array) {
 }
 
 getExtremeElements(["Earth", "Mars", "Venus", "Jupiter"]);
+
+function greet(name) {
+  //your code here
+
+  const greetStatement = console.log(
+    `'Hello, ${name} how are you doing today?'`
+  );
+  return greetStatement;
+}
+
+greet("Roman");
