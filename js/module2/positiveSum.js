@@ -28,3 +28,13 @@ function smallestOneV2(params) {
   return Math.min(...params);
 }
 console.log(smallestOneV2([-2, -54, 1, 23, 4]));
+
+// ===========new one
+
+function calculateTotal(number) {
+  let total = 0;
+  for (let index = 0; index <= number; index += 1) {
+    total += index;
+  }
+  return total;
+}
