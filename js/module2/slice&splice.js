@@ -30,3 +30,22 @@ console.log(allClients);
 
 const oldFirst = clientsOld.concat(clientsNew);
 console.log(oldFirst);
+
+//
+function makeArray(firstArray, secondArray, maxLength) {
+  // Change code below this line
+  const globalArray = firstArray.concat(secondArray);
+
+  // =======ALSO works)
+  //   if (globalArray.length > maxLength) {
+  //     globalArray.length = maxLength;
+  //   }
+  const slicedArray = globalArray.slice(0, maxLength);
+
+  return slicedArray;
+  // Change code above this line
+}
+
+console.log(
+  makeArray(["Mango", "Ajax", "Poly", "Kiwi"], ["red", "blue", "green"], 3)
+);
