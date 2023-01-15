@@ -9,3 +9,16 @@ function getCommonElements(array1, array2) {
   return newArray;
 }
 console.log(getCommonElements([1, 2, 4, 5, 6], [2, 4, 8, 9]));
+
+// ======even numbers
+
+function getEvenNumbers(start, end) {
+  let evenNUmbersArray = [];
+  for (let index = start; index <= end; index += 1) {
+    if (index % 2 === 0) {
+      evenNUmbersArray.push(index);
+    }
+  }
+  return evenNUmbersArray;
+}
+console.log(getEvenNumbers(8, 8));
