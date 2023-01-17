@@ -6,4 +6,4 @@ function countProps(object) {
   return propCount;
 }
 
-console.log(countProps({ book: "bullsht", author: "asshole" }));
+console.log(countProps({ book: "Witcher", author: "Andrej Sapkowski" }));
