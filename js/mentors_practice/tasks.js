@@ -1,3 +1,5 @@
+// ========Task 1
+
 //Напишіть код, який запитуватиме
 //логін за допомогою prompt і логувати результат
 //в консоль браузера
@@ -33,4 +35,12 @@ const checkLogin = function () {
   }
 };
 
-checkLogin();
+// checkLogin();
+
+// ========== task 2
+
+function min(a, b) {
+  const result = Math.min(a, b);
+  return result;
+}
+console.log(min(4, 12));
