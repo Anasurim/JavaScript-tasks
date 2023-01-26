@@ -23,3 +23,24 @@ console.log(studentsInAlphabetOrder);
 const studentsReversedOrder = studentsCopy.sort((a, b) => b.localeCompare(a));
 
 console.log(studentsReversedOrder);
+
+console.log("========object sort===========");
+
+const studentsToSort = [
+  { name: "Манго", score: 83 },
+  { name: "Полі", score: 59 },
+  { name: "Аякс", score: 37 },
+  { name: "Ківі", score: 94 },
+];
+
+const ascendingScoreOrder = studentsToSort.sort(
+  (firstStudent, secondStudent) => firstStudent.score - secondStudent.score
+);
+
+console.log(ascendingScoreOrder);
+
+const alphabetNameOrder = studentsToSort.sort((firstStudent, secondStudent) =>
+  firstStudent.name.localeCompare(secondStudent.name)
+);
+
+console.log(alphabetNameOrder);
