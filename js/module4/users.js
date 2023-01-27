@@ -76,10 +76,40 @@ const getFriends = (users) =>
     .flatMap((user) => user.friends)
     .filter((friend, index, array) => array.indexOf(friend) === index);
 
-console.log(getFriends(users));
+// console.log(getFriends(users));
 
 const getActiveUsers = (users) => {
   return users.filter((user) => user.isActive === true);
 };
 
-console.log(getActiveUsers(users));
+// console.log(getActiveUsers(users));
+
+const calculateTotalBalance = (users) =>
+  users.reduce((totalBalance, { balance }) => {
+    totalBalance += balance;
+    return totalBalance;
+  }, 0);
+
+// console.log(calculateTotalBalance(users));
+
+const getAllFriends = (users) =>
+  users
+    .reduce((allFriends, friend) => {
+      allFriends.push(...friend.friends);
+
+      return allFriends;
+    }, [])
+    .reduce((acc) => acc + 1, 0);
+
+console.log(getAllFriends(users));
+
+// const getTotalFriendCount = (users) =>
+//   getAllFriends(users).reduce((acc) => {
+//     return acc + 1;
+//   }, 0);
+
+// console.log(getTotalFriendCount(users));
+
+// const getTotalFriendCount = getAllFriends(users).length;
+
+// console.log(getTotalFriendCount);
