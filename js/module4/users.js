@@ -113,3 +113,8 @@ console.log(getAllFriends(users));
 // const getTotalFriendCount = getAllFriends(users).length;
 
 // console.log(getTotalFriendCount);
+
+const sortByDescendingFriendCount = (users) =>
+  [...users].sort((a, b) => a.friends.length - b.friends.length);
+
+console.table(sortByDescendingFriendCount(users));
