@@ -72,11 +72,12 @@ const users = [
 ];
 
 const getFriends = (users) =>
-  users
+  [...users]
     .flatMap((user) => user.friends)
-    .filter((friend, index, array) => array.indexOf(friend) === index);
+    .filter((friend, index, array) => array.indexOf(friend) === index)
+    .sort((a, b) => a.localeCompare(b));
 
-// console.log(getFriends(users));
+console.log(getFriends(users));
 
 const getActiveUsers = (users) => {
   return users.filter((user) => user.isActive === true);
@@ -118,3 +119,22 @@ const sortByDescendingFriendCount = (users) =>
   [...users].sort((a, b) => a.friends.length - b.friends.length);
 
 console.table(sortByDescendingFriendCount(users));
+
+const getNamesSortedByFriendCount = (users) =>
+  [...users]
+    .sort((a, b) => a.friends.length - b.friends.length)
+    .map(({ name }) => name);
+
+console.table(getNamesSortedByFriendCount(users));
+
+console.log("========count total balance by gender==========");
+
+const getTotalBalanceByGender = (users, gender) =>
+  [...users]
+    .filter((sex) => sex.gender === gender)
+    .reduce((totalBalance, userBalance) => {
+      totalBalance += userBalance.balance;
+      return totalBalance;
+    }, 0);
+
+console.log(getTotalBalanceByGender(users, "female"));
