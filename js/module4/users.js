@@ -77,3 +77,9 @@ const getFriends = (users) =>
     .filter((friend, index, array) => array.indexOf(friend) === index);
 
 console.log(getFriends(users));
+
+const getActiveUsers = (users) => {
+  return users.filter((user) => user.isActive === true);
+};
+
+console.log(getActiveUsers(users));
