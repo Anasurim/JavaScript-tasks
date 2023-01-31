@@ -12,11 +12,12 @@ class Storage {
   }
 
   removeItem(itemToRemove) {
-    for (let index = 0; index < this.items.length; index += 1) {
-      if (itemToRemove === this.items[index]) {
-        return this.items.splice(index, 1);
-      }
-    }
+    this.items = this.items.filter((item) => item !== itemToRemove);
+    // for (let index = 0; index < this.items.length; index += 1) {
+    //   if (itemToRemove === this.items[index]) {
+    //     return this.items.splice(index, 1);
+    //   }
+    // }
   }
 }
 
@@ -29,6 +30,6 @@ storage.addItem("Droid");
 
 console.log(storage.getItems());
 
-// storage.removeItem("Prolonger");
+storage.removeItem("Prolonger");
 storage.removeItem("GUGU");
 console.log(storage.getItems());
