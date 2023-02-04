@@ -176,3 +176,10 @@ const typesArr = vehicles.reduce((acc, car) => {
 }, []);
 
 console.log(typesArr);
+
+const getAvailibleCarModel = (cars, availibleQuntity) =>
+  cars
+    .filter(({ amount }) => amount >= availibleQuntity)
+    .map(({ model }) => model);
+
+console.log(getAvailibleCarModel(vehicles, 15));
