@@ -9,9 +9,20 @@ body {
 }
 
 .list-item {
+  display: flex;
+  align-items: center;
   padding: 8px;
   border-width: 2px;
   border-style: dashed;
+}
+
+.list-item.new::before {
+  content: "";
+  width: 12px;
+  height: 12px;
+  margin-right: 8px;
+  border-radius: 50%;
+  background-color: green;
 }
 
 .list-item:nth-child(even) {
