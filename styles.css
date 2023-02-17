@@ -2,37 +2,73 @@ body {
   padding: 16px;
 }
 
-.list {
-  padding: 0;
+.register-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.register-form input {
+  margin-bottom: 16px;
+  padding: 8px 12px;
+}
+
+.register-form button {
+  padding: 12px;
+}
+
+ul {
   margin: 0;
+  padding: 0;
   list-style-type: none;
 }
 
-.list-item {
-  display: flex;
-  align-items: center;
+.log-list {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 24px;
+  margin-top: 16px;
+}
+
+.log-item {
+  position: relative;
   padding: 8px;
-  border-width: 2px;
-  border-style: dashed;
+  border: 1px dashed #2a2a2a;
+  border-radius: 4px;
+  font-size: 16px;
+  font-family: monospace;
 }
 
-.list-item.new::before {
-  content: "";
-  width: 12px;
-  height: 12px;
-  margin-right: 8px;
-  border-radius: 50%;
+.log-item > .chip {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  width: 20px;
+  height: 20px;
   background-color: green;
+  border-radius: 4px;
+  color: #fff;
+  font-size: 16px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.list-item:nth-child(even) {
-  border-color: tomato;
+.log-list li:not(:last-child) {
+  margin-bottom: 4px;
 }
 
-.list-item:nth-child(odd) {
-  border-color: blueviolet;
+button {
+  display: inline-flex;
+  padding: 8px 12px;
+  cursor: pointer;
+  font-family: inherit;
+  text-transform: uppercase;
 }
 
-.list-item:not(:last-child) {
-  margin-bottom: 8px;
+.form {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 32px;
 }
