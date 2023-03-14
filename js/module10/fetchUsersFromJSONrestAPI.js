@@ -9,14 +9,14 @@ fetchUsersBtn.addEventListener("click", () => {
 });
 
 function fetchUsers() {
-  return fetch("https://jsonplaceholder.typicode.com/users").then(
-    (response) => {
-      if (!response.ok) {
-        throw new Error(response.status);
-      }
-      return response.json();
+  return fetch(
+    "https://jsonplaceholder.typicode.com/users?_limit=2&_sort=name" // ? - start, & - and
+  ).then((response) => {
+    if (!response.ok) {
+      throw new Error(response.status);
     }
-  );
+    return response.json();
+  });
 }
 
 function renderUserList(users) {
