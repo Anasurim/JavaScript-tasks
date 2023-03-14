@@ -1,5 +1,12 @@
 const fetchUsersBtn = document.querySelector(".btn");
 
+const searchParams = new URLSearchParams({
+  _limit: 5,
+  _sort: name,
+});
+
+// searchParams.toString(); - not necessary
+
 const userList = document.querySelector(".user-list");
 
 fetchUsersBtn.addEventListener("click", () => {
@@ -10,7 +17,10 @@ fetchUsersBtn.addEventListener("click", () => {
 
 function fetchUsers() {
   return fetch(
-    "https://jsonplaceholder.typicode.com/users?_limit=2&_sort=name" // ? - start, & - and
+    `https://jsonplaceholder.typicode.com/users?${searchParams}`
+
+    // old version
+    // "https://jsonplaceholder.typicode.com/users?_limit=2&_sort=name" // ? - start, & - and
   ).then((response) => {
     if (!response.ok) {
       throw new Error(response.status);
