@@ -10,7 +10,6 @@ export default class FilmRestAPI {
     const API_KEY = "4c6e55add2f00844e9f979bd7b0fac7c";
     const searchParams = new URLSearchParams({
       page: this.page,
-      query: this.searchQuery,
     });
     const BASE_URL = `https://api.themoviedb.org/3/trending/movie/week?api_key=${API_KEY}&${searchParams}`;
 
@@ -19,6 +18,26 @@ export default class FilmRestAPI {
       const data = await response.json();
 
       this.incrementPage();
+
+      console.log(data);
+      return data;
+    } catch (error) {
+      console.error(error);
+    }
+  }
+
+  async searchMovies() {
+    const API_KEY = "4c6e55add2f00844e9f979bd7b0fac7c";
+    const searchParams = new URLSearchParams({
+      page: this.page,
+      query: this.searchQuery,
+    });
+
+    const BASE_URL = ` https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&${searchParams}`;
+
+    try {
+      const response = await fetch(BASE_URL);
+      const data = await response.json();
 
       console.log(data);
       return data;
@@ -51,21 +70,23 @@ const refs = {
   gallery: document.querySelector(".gallery"),
 };
 
-// refs.form.addEventListener("submit", onSearch);
+refs.form.addEventListener("submit", onSearch);
 
-// async function onSearch(e) {
-//   e.preventDefault();
+async function onSearch(e) {
+  e.preventDefault();
 
-//   movie.query = e.currentTarget.elements.searchQuery.value.trim();
+  movie.query = e.currentTarget.elements.searchQuery.value.trim();
 
-//   try {
-//     const hits = await movie.fetchMovies();
-//     console.log(hits);
-//     appendCardMarkup(hits);
-//   } catch (error) {
-//     console.log("Error:", error);
-//   }
-// }
+  try {
+    const match = await movie.searchMovies();
+    console.log(match);
+
+    clearGallery();
+    appendCardMarkup(match);
+  } catch (error) {
+    console.log("Error:", error);
+  }
+}
 
 async function renderMarkUpMain() {
   try {
@@ -101,4 +122,9 @@ function appendCardMarkup(hits) {
 
   refs.gallery.insertAdjacentHTML("beforeend", markUp.join(""));
 }
+
+function clearGallery() {
+  refs.gallery.innerHTML = "";
+}
+
 renderMarkUpMain();
