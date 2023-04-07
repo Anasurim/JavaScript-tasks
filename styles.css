@@ -18,3 +18,38 @@ p {
 .user-list li:not(:last-child) {
   margin-bottom: 16px;
 }
+
+/* CSS for the gallery container */
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+/* CSS for the photo card */
+.photo-card {
+  flex-basis: calc(33.33% - 20px);
+  margin-bottom: 20px;
+  box-sizing: border-box;
+}
+
+/* CSS for the image inside the photo card */
+.photo-card img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* CSS for the info container inside the photo card */
+.photo-card .info {
+  padding: 10px;
+  background-color: #f5f5f5;
+  box-sizing: border-box;
+}
+
+/* CSS for the info items inside the info container */
+.photo-card .info-item {
+  margin-bottom: 5px;
+  font-size: 16px;
+  line-height: 1.4;
+}

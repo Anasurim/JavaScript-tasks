@@ -51,13 +51,23 @@ const refs = {
   gallery: document.querySelector(".gallery"),
 };
 
-refs.form.addEventListener("submit", onSearch);
+// refs.form.addEventListener("submit", onSearch);
 
-async function onSearch(e) {
-  e.preventDefault();
+// async function onSearch(e) {
+//   e.preventDefault();
 
-  movie.query = e.currentTarget.elements.searchQuery.value.trim();
+//   movie.query = e.currentTarget.elements.searchQuery.value.trim();
 
+//   try {
+//     const hits = await movie.fetchMovies();
+//     console.log(hits);
+//     appendCardMarkup(hits);
+//   } catch (error) {
+//     console.log("Error:", error);
+//   }
+// }
+
+async function renderMarkUpMain() {
   try {
     const hits = await movie.fetchMovies();
     console.log(hits);
@@ -91,3 +101,4 @@ function appendCardMarkup(hits) {
 
   refs.gallery.insertAdjacentHTML("beforeend", markUp.join(""));
 }
+renderMarkUpMain();
